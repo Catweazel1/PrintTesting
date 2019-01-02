@@ -52,7 +52,7 @@ namespace PrintTesting
             // Find all paired instances of the Rfcomm service and display them in a list
             dataServiceDeviceCollection = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
 
-            if(dataServiceDeviceCollection.Contains > 0)
+            if(dataServiceDeviceCollection.Count > 0)
             {
                 DeviceList.Items.Clear();
                 foreach (var dataServiceDevice in dataServiceDeviceCollection)
@@ -294,7 +294,7 @@ namespace PrintTesting
             string s = "";
             foreach (byte b in buffer)
                 if (b > 32)
-                    s += "<" + b.ToString("x") + ">"
+                    s += "<" + b.ToString("x") + ">";
                 else
                     s += System.Text.Encoding.UTF8.GetString(new byte[] { b });
             return s;
