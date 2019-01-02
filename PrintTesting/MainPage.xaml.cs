@@ -26,5 +26,30 @@ namespace PrintTesting
         {
             this.InitializeComponent();
         }
+
+        private void btnListPrinters_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeviceList_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDisconnect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboboxFiles_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
