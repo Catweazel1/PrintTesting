@@ -10,7 +10,7 @@
 
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Name="txtToPrint"></TextBlock>
+            <TextBlock Name="txtToPrint" Text="Text to print: " Margin="0,0,20,0"/>
             <TextBox Name="txtEnteredText"/>
         </StackPanel>
         <Button Name="btnPrint" Click="BtnPrint_Click">Print</Button>

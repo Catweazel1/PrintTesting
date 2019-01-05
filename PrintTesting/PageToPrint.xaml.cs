@@ -24,10 +24,46 @@ namespace PrintTesting
     /// </summary>
     public sealed partial class PageToPrint : Page
     {
+        PrintDocument printDoc;
+        IPrintDocumentSource printDocSrc;
+
         public PageToPrint()
         {
             this.InitializeComponent();
-            txtbxEnteredText.Text = App.TestText;
+            txtblkEnteredText.Text = App.TestText;
+        }
+
+        public virtual void RegisterForPrinting()
+        {
+            printDoc = new PrintDocument();
+            printDocSrc = printDoc.DocumentSource;
+            printDoc.Paginate += CreatePrintPreviewPages;
+            printDoc.GetPreviewPage += GetPrintPreviewPage;
+            printDoc.AddPages += AddPrintPages;
+
+            PrintManager printMan = PrintManager.GetForCurrentView();
+            printMan.PrintTaskRequested += PrintTastRequested;
+        }
+
+        private void PrintTastRequested(PrintManager sender, PrintTaskRequestedEventArgs args)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddPrintPages(object sender, AddPagesEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
+        {
+            // clear the cache of preview pages
+            printPreviewPages.Clear();
         }
     }
 }

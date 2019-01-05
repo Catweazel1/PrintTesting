@@ -11,7 +11,7 @@
     <Grid>
         <StackPanel  Orientation="Horizontal">
             <TextBlock>Text that was entered: </TextBlock>
-            <TextBox Name="txtbxEnteredText" Height="76" Width="Auto" VerticalAlignment="Top" IsReadOnly="True"/>
+            <TextBlock Name="txtblkEnteredText" Height="76" Width="Auto" VerticalAlignment="Top" Margin="20,0,0,0"/>
         </StackPanel>
     </Grid>
 </Page>
